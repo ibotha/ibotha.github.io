@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Isard - RayTracer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Noto%20Sans' rel='stylesheet'>
+    <link rel="icon" href="./icons/Intro.svg">
+    <link rel="stylesheet" href="./theme.css">
+    <link rel="stylesheet" href="./icon.css">
+    <meta name="description" content="Isard Botha's portfolio site." />
+    <meta name="author" content="Isard Botha" />
+</head>
+
+<script>
+    window.onload = () => {
+        const images = document.querySelectorAll(".screenshot-container>img");
+        for (var i = 0; i < images.length; i++) {
+            const image = images[i]
+            const src = image.src
+            const alt = image.alt
+            image.addEventListener('mousedown', () => { screenshotFocus(src, alt) })
+        }
+    }
+    const screenshotFocus = (src, alt) => {
+        const focus = document.getElementById("screenshot-focus")
+        focus.src = src
+        focus.alt = alt
+    }
+</script>
+
+<body>
+    <a href="./index.html" style="position: fixed; top: 1em; left: 1em;" title="Back To Main">
+        <svg class="language icon" viewBox="0 0 100 100">
+            <mask id="introImgMask">
+                <rect x="0" y="0" width="100" height="100" fill="black" />
+                <image id="img" xlink:href="./icons/Intro.svg" x="0" y="0" width="100" height="100" />
+            </mask>
+            <rect x="0" y="0" width="100" height="100" fill="currentColor" mask="url(#introImgMask)" />
+        </svg>
+    </a>
+    <main id="rt-section" class="static-background">
+        <header>
+            <div class="nameplate content">
+
+                <div>
+                    <h1>Ray Tracer</h1>
+                    <div class="subtitle">Making light work of a complicated problem</div>
+                    <div class="links"><a href="https://github.com/ibotha/Ray-Tracer">
+                            <svg class="language icon" viewBox="0 0 300 100">
+                                <mask id="GHImageOcclusion">
+                                    <rect x="0" y="-10" width="300" height="120" fill="black" />
+                                    <image id="GH-img" xlink:href="./icons/GitHub-Logos/GitHub_Logo_White.png" x="-30"
+                                        y="-20" width="360" height="140" />
+                                </mask>
+                                <rect x="0" y="0" width="300" height="100" fill="currentColor"
+                                    mask="url(#GHImageOcclusion)" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img src="Images/RayTracingThumbnail.png" />
+            </div>
+        </header>
+        <section class="secondary">
+            <div class="image">
+                <img src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/outFullBSDF.jpeg"
+                    alt="FullBSDF">
+            </div>
+            <div class="content half-and-half">
+
+                <h2 style="display: flex; flex-direction: column-reverse;">Details</h2>
+                <div>
+                    <p>
+                        The point of this project was to understand how ray-tracing worked at an intermediate level
+                        and
+                        to improve upon the readability of my previous ray-tracer that I made when I was in college.
+                    </p>
+                    <p>
+                        The ray-tracer is based off of the popular book series <a
+                            href="https://raytracing.github.io/">Ray
+                            Tracing in one Weekend</a> which is an
+                        excellent
+                        resource. As well as some information from this <a
+                            href="https://www.youtube.com/watch?v=pjc1QAI6zS0&list=PLujxSBD-JXgnGmsn7gEyN28P1DnRZG7qi">video
+                            series</a> on rendering done by Two Minute Papers.
+                        It is a simple path-tracer that leverages monte-carlo integration to achieve a number of
+                        effects,
+                        such as global illumination, anti-aliasing, blur, and depth-of-field,
+                        converging on a more accurate image as the number of samples increases. In addition I
+                        managed to
+                        implement a Bounding Volume Hierarchy (BVH) Which greatly improved performance when
+                        rendering
+                        large scenes.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="image">
+                <img src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/SmallerLightSource.png"
+                    alt="NoisyRender" />
+            </div>
+            <div class="content half-and-half">
+                <h2 style="display: flex; flex-direction: column-reverse;">Take Aways</h2>
+                <p>
+                    I think there is certainly something to be desired when it comes to the colour balancing and
+                    general attenuation of the BSDF I ended up with, but in general this went amazingly well. I
+                    intentionally time-boxed this project to avoid diminishing returns and after doing this I
+                    had a
+                    much better
+                    understanding of the probabilistic nature of the most popular methods for ray-tracing that
+                    are
+                    used these days. I was also much more methodical with how I approached this project, making
+                    sure
+                    to document various stages of development and spending a good amount of time in the research
+                    phase.
+                </p>
+            </div>
+        </section>
+        <section class="secondary">
+            <div class="screenshot-parent content" style="background-color: transparent;">
+                <h2 style="display: none;">Screenshots</h2>
+                <div class="screenshot-container">
+                    <img src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/outCamera220221.png"
+                        alt="FirstRender" />
+                    <img src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/BVHDemo.png"
+                        alt="Bounding Volume Hierarchy" />
+                    <img src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/SmallerLightSource.png"
+                        alt="NoisyRender" />
+                    <img src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/outFullBSDF.jpeg"
+                        alt="FullBSDF" />
+                </div>
+            </div>
+            <div class="image"><img id="screenshot-focus"
+                    src="https://github.com/ibotha/Ray-Tracer/raw/master/Ray-Tracer/output/outFullBSDF.jpeg"
+                    alt="FullBSDF"></div>
+        </section>
+    </main>
+</body>
+
+<style>
+    html {
+        --light-hue: 234deg;
+        --light-saturation: 44%;
+        --dark-hue: 234deg;
+        --dark-saturation: 20%;
+    }
+
+    section,
+    header {
+        min-height: 100vh;
+        background-color: var(--background-shade2);
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-columns: minmax(40ch, 1fr) 3fr;
+        grid-template-areas:
+            "text image";
+        width: 100%;
+        /* border-bottom: 1em solid var(--text-muted); */
+    }
+
+    section.secondary,
+    header.secondary {
+        grid-template-columns: 3fr minmax(40ch, 1fr);
+        grid-template-areas:
+            "image text";
+    }
+
+
+
+    section>.image>img {
+        width: 100%;
+        max-width: 90ch;
+        height: 100%;
+        object-fit: contain;
+        margin: auto;
+        display: block;
+    }
+
+    .half-and-half {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    @media only screen and (max-width: 100ch) {
+
+        section,
+        header,
+        section.secondary,
+        header.secondary {
+            min-height: auto;
+            grid-template-columns: 1fr;
+            grid-template-rows: min-content min-content;
+            grid-template-areas:
+                "image"
+                "text";
+        }
+
+        #screenshot-focus {
+            display: none;
+        }
+
+        section:nth-child(2)>.content {
+            background-color: var(--background-shade2);
+        }
+
+        section:nth-child(3)>.content {
+            background-color: var(--background-shade1);
+        }
+
+        section:nth-child(4)>.content {
+            background-color: var(--background-shade2);
+        }
+
+        .half-and-half {
+            display: block;
+        }
+    }
+
+    .image {
+        grid-area: image;
+        width: 100%;
+        height: 100%;
+    }
+
+    header>.image>img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    section>.content,
+    header>.content {
+        background-color: var(--background-shade1);
+        grid-area: text;
+    }
+
+    section:nth-child(2) {
+        background-color: var(--background-shade2);
+    }
+
+    section:nth-child(3) {
+        background-color: var(--background-shade3);
+    }
+
+    section:nth-child(4) {
+        background-color: var(--background-shade4);
+    }
+
+    .screenshot-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .screenshot-container>img {
+        width: 100%;
+        pointer-events: all;
+        cursor: pointer;
+        display: inline-block;
+        z-index: 1;
+        flex-grow: 1;
+        object-fit: cover;
+    }
+
+    .nameplate {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding: 1em;
+    }
+
+    h1 {
+        font-size: min(6em, 7vw);
+        margin: 0;
+    }
+
+    h2 {
+        font-size: min(2rem, 5vw);
+        padding: 1rem;
+        margin: 0;
+        background-color: var(--background-shade4);
+    }
+
+    h3 {
+        margin-bottom: 0.5em;
+        margin-top: 0em;
+    }
+
+    p {
+        margin: 1rem;
+
+    }
+
+    p a {
+        color: var(--text-muted);
+    }
+</style>
+
+</html>

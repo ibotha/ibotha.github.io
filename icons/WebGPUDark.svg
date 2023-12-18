@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="552.96pt"
+    height="432pt"
+    viewBox="0 0 552.96 432">
+<defs/>
+<path id="Triangle_4" transform="matrix(0.72 0 0 0.72 407.83752 137.7)" fill="#000000" stroke="#ffffff" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" d="M60.189 104.25L0 0L120.55 0Z" sodipodi:nodetypes="cccc"/><path id="Triangle_5" transform="matrix(0.72 0 0 0.72 407.83752 62.64072)" fill="#000000" stroke="#ffffff" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" d="M60.189 0L0 104.25L120.55 104.25Z" sodipodi:nodetypes="cccc"/><path id="Triangle_3" transform="matrix(0.72 0 0 0.72 277.8336 212.75856)" fill="#000000" stroke="#ffffff" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" d="M120.38 208.502L0 0.002L240.76 0Z" sodipodi:nodetypes="cccc"/><path id="Triangle_2" transform="matrix(0.72 0 0 0.72 277.8336 62.64)" fill="#000000" stroke="#ffffff" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" d="M120.38 0L0 208.5L240.76 208.498Z" sodipodi:nodetypes="cccc"/><path id="Triangle_1" transform="matrix(0.72 0 0 0.72 17.8128 62.64)" fill="#000000" stroke="#ffffff" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" d="M240.76 417L0 0L481.51 0Z" sodipodi:nodetypes="cccc"/>
+</svg>

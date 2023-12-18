@@ -1,0 +1,23 @@
+.language.icon {
+    display: inline-block;
+    height: 1.1em;
+    vertical-align: middle;
+}
+
+.medium.icon {
+    font-size: min(2.5em, 6vw);
+    display: inline-block;
+    height: 1.1em;
+    vertical-align: middle;
+}
+
+.large.icon {
+    font-size: min(6em, 8vw);
+    display: inline-block;
+    height: 1.1em;
+    vertical-align: middle;
+}
+
+.icon {
+    /* filter: saturate(var(--saturation)) brightness(var(--text-value)) hue-rotate(var(--hue)); */
+}

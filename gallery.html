@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Isard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Noto%20Sans' rel='stylesheet'>
+    <link rel="icon" href="./icons/Intro.svg">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="description" content="Isard Botha's portfolio site." />
+    <meta name="author" content="Isard Botha" />
+</head>
+
+<body>
+    <a href="index.html" style="position: fixed; top: 0.5em; left: 0.5em; z-index: 2; font-size: larger;"><svg
+            class="language-ico" viewBox="0 0 100 100">
+            <mask id="imageOcclusion">
+                <rect x="0" y="0" width="100" height="100" fill="black" />
+                <image id="img" xlink:href="./icons/Intro.svg" x="0" y="0" width="100" height="100" />
+            </mask>
+            <rect x="0" y="0" width="100" height="100" fill="currentColor" mask="url(#imageOcclusion)" />
+        </svg></a>
+    <main class="static-background" id="art-section" style="
+    background-image: url(./Images/Journey.png);
+">
+        <div style="height: 4em; width: 100%;"></div>
+        <div class="hero">
+            <h1><img class="language-ico" src="./icons/Brush.svg" alt="Art Gallery" title="Gallery"> Gallery</h1>
+        </div>
+        <div style="padding: 1em;">
+            <div class="gallery">
+                <div class="same-height-row">
+                    <div class="gallery-image" style="background-image: url(https://cdna.artstation.com/p/assets/images/images/070/589/518/large/isard-botha-agora.jpg?1702926537);
+                    flex-grow: 1;
+                    padding-top: 50%;
+                    " title="Agora">
+                    </div>
+
+                    <div class="gallery-image" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/070/589/521/large/isard-botha-journey.jpg?1702926543);
+                    flex-grow: 1;
+                    padding-top: 50%;
+                    " title="Journey">
+                    </div>
+                </div>
+                <div class="same-height-row">
+                    <div class="gallery-image" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/070/589/531/large/isard-botha-snazyrarabigger.jpg?1702926579);
+                    flex-grow: 1;
+                    padding-top: 35%;" title="Snaz">
+                    </div>
+                    <div class="gallery-image" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/070/589/523/large/isard-botha-joy.jpg?1702926553);
+                    flex-grow: 2;
+                    padding-top: 35%;
+                    " title="Joy">
+                    </div>
+                    <div class="gallery-image" style="background-image: url(https://cdnb.artstation.com/p/assets/images/images/070/590/489/large/isard-botha-pheonix.jpg?1702928642);
+                    flex-grow: 1;
+                    padding-top: 35%;" title="Phoenix">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="image-focus" id="image-focus" onclick="this.style.display = 'none'">
+        <div class="image-border">
+            <div class="image-container">
+                <img id="focused-image"
+                    src="https://cdnb.artstation.com/p/assets/images/images/070/590/489/large/isard-botha-pheonix.jpg?1702928642"
+                    alt="">
+                <div class="image-label" id="image-label">Name</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    window.onload = () => {
+        const imageElements = document.getElementsByClassName("gallery-image")
+        for (var i = 0; i < imageElements.length; i++) {
+            const element = imageElements[i]
+            const imageUrl = element.style.backgroundImage.split('"')[1]
+            element.addEventListener('mousedown', () => {
+                focusImage(imageUrl, element.title);
+            })
+        };
+    }
+    function focusImage(url, label) {
+        const focusedImage = document.getElementById("focused-image")
+        const imageFocus = document.getElementById("image-focus")
+        const imageLabel = document.getElementById("image-label")
+
+        focusedImage.src = url
+        focusedImage.alt = label
+        imageFocus.style.display = 'flex'
+        imageLabel.innerText = label ?? ''
+        console.log(url)
+    }
+</script>
+
+<style>
+    .image-focus {
+        position: fixed;
+        display: none;
+        top: 0%;
+        left: 0%;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background-color: hsla(0deg, 0%, 0%, 0.5);
+        /* display: flex; */
+        /* flex-direction: row; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* padding: 2rem; */
+    }
+
+    .image-border {
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* align-items: center; */
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-container {
+        /* display: flex; */
+        /* margin: auto; */
+        /* display: grid; */
+        /* grid-template-columns: 1fr; */
+        /* grid-template-rows: 1fr; */
+        /* justify-content: stretch; */
+        /* align-content: center; */
+        padding: 1em;
+        margin: 1em;
+        background-color: var(--background);
+    }
+
+    #focused-image {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 80vh;
+        height: auto;
+        margin: 0;
+    }
+
+    .image-label {
+        text-align: center;
+    }
+</style>
+
+</html>

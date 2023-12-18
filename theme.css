@@ -1,0 +1,89 @@
+html {
+    --dark-hue: 180deg;
+    --dark-saturation: 10%;
+    --hue: var(--dark-hue);
+    --saturation: var(--dark-saturation);
+    --hue-sat: var(--hue), var(--saturation);
+    --dark-background-shade1: hsl(var(--hue-sat), 10%);
+    --dark-background-shade2: hsl(var(--hue-sat), 15%);
+    --dark-background-shade3: hsl(var(--hue-sat), 20%);
+    --dark-background-shade4: hsl(var(--hue-sat), 25%);
+
+    --dark-text-value: 97%;
+    --dark-text-colour: hsl(var(--hue-sat), var(--dark-text-value));
+    --dark-text-muted: hsl(var(--hue-sat), 75%);
+
+    --light-hue: 160deg;
+    --light-saturation: 50%;
+    --light-background-shade1: hsl(var(--hue-sat), 98%);
+    --light-background-shade2: hsl(var(--hue-sat), 92%);
+    --light-background-shade3: hsl(var(--hue-sat), 88%);
+    --light-background-shade4: hsl(var(--hue-sat), 85%);
+
+    --light-text-value: 13%;
+    --light-text-colour: hsl(var(--hue-sat), var(--text-value));
+    --light-text-muted: hsl(var(--hue-sat), 40%);
+
+    --background-shade1: var(--dark-background-shade1);
+    --background-shade2: var(--dark-background-shade2);
+    --background-shade3: var(--dark-background-shade3);
+    --background-shade4: var(--dark-background-shade4);
+    --text-colour: var(--dark-text-colour);
+    --text-muted: var(--dark-text-muted);
+
+    scroll-behavior: smooth;
+    background-color: var(--background-shade1);
+
+    height: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+    html {
+        --hue: var(--light-hue);
+        --saturation: var(--light-saturation);
+        --background-shade1: var(--light-background-shade1);
+        --background-shade2: var(--light-background-shade2);
+        --background-shade3: var(--light-background-shade3);
+        --background-shade4: var(--light-background-shade4);
+        --text-colour: var(--light-text-colour);
+        --text-muted: var(--light-text-muted);
+        --text-value: var(--light-text-value);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    html {
+        --hue: var(--dark-hue);
+        --saturation: var(--dark-saturation);
+        --background-shade1: var(--dark-background-shade1);
+        --background-shade2: var(--dark-background-shade2);
+        --background-shade3: var(--dark-background-shade3);
+        --background-shade4: var(--dark-background-shade4);
+        --text-colour: var(--dark-text-colour);
+        --text-muted: var(--dark-text-muted);
+        --text-value: var(--dark-text-value);
+    }
+}
+
+body {
+    font-family: 'Roboto Slab';
+    border: 0;
+    margin: 0;
+    width: 100%;
+    color: var(--text-colour);
+    background-color: var(--background-shade1);
+}
+
+/* *::-webkit-scrollbar {
+    display: none;
+} */
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+li::marker {
+    content: '◈ ';
+    font-weight: bolder;
+}

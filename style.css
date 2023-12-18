@@ -1,0 +1,230 @@
+html {
+    --light: #fafafa;
+    --dark: #151515;
+    scroll-behavior: smooth;
+    --background: var(--dark);
+    --text: var(--light);
+    --accent: #928677;
+    background-color: var(--background);
+}
+
+section {}
+
+.light-icon {
+    display: none;
+}
+
+.static-background {
+    /* height: min-content; */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    font-family: 'Noto Sans';
+    border: 0;
+    margin: 0;
+    width: 100%;
+    color: var(--text);
+    background-color: var(--background);
+}
+
+.flex-row-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+    gap: 1em;
+}
+
+.details {
+    max-width: 70ch;
+    padding: 0.5em;
+    width: 100%;
+    background-color: #1a1a1a;
+}
+
+.language-ico {
+    display: inline-block;
+    height: 1.1em;
+    vertical-align: middle;
+}
+
+.nav-ico {
+    display: inline-block;
+    height: 2.0em;
+    cursor: pointer;
+    overflow: visible;
+}
+
+h1 {
+    font-size: min(6em, 8vw);
+    text-align: center;
+}
+
+h2 {
+    border-bottom: 0.2em solid var(--accent);
+    padding: 0.25em;
+}
+
+h3 {}
+
+.hero {
+    padding: auto 1em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* min-height: 12cm; */
+    /* text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; */
+    /* color: #000; */
+    /* text-shadow: 2px 3px white; */
+    text-align: center;
+    min-height: 20em;
+    /* box-shadow: inset 0px -10px 10px -10px black, inset 0px 10px 10px -10px black; */
+
+}
+
+.cover {
+    min-height: 30em;
+    background-color: var(--background);
+    padding: 1em 1em 7em 1em;
+}
+
+a {
+    color: inherit;
+}
+
+header {
+    top: 0em;
+    width: 100vw;
+    position: fixed;
+    background-color: var(--background);
+    z-index: 10;
+}
+
+footer {
+    background-color: var(--background);
+    text-align: center;
+    padding: 0.5em;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 1em auto;
+    width: calc(100% - 4em);
+    background-color: var(--background);
+    max-width: 80ch;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.continuation-line {
+    flex-grow: 1;
+    border-bottom: 1px solid var(--text);
+    flex-shrink: 1;
+    /* height: 50%; */
+}
+
+.screenshot-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    background-color: #1a1a1a;
+    padding: 1em;
+}
+
+.screenshot-parent {
+    max-width: 141ch;
+    margin: auto;
+}
+
+.screenshot-container>div>img {
+    width: 100%;
+}
+
+.gallery {
+    display: grid;
+    /* grid-auto-flow: column dense; */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(auto));
+    gap: 1em;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.same-height-row {
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.1s ease-in-out;
+}
+
+.gallery-image:hover {
+    transform: scale(1.01, 1.01)
+}
+
+li::marker {
+    content: '◈ ';
+    font-weight: bolder;
+}
+
+
+/* @media (prefers-color-scheme: dark) { */
+#tetris-section {
+    background-image: url("./Images/Tetris.png");
+}
+
+#rt-section {
+    background-image: url("./Images/RayTracing.png");
+}
+
+#intro-section {
+    background-image: url("./Images/AgoraWallpaper.png");
+}
+
+/* } */
+
+/* @media (prefers-color-scheme: light) {
+    #tetris-section {
+        background-image: url("./Images/TetrisLight.png");
+    }
+
+    #rt-section {
+        background-image: url("./Images/RayTracingLight.png");
+    }
+
+    #intro-section {
+        background-image: url("./Images/AgoraWallpaperLight.png");
+    }
+
+    .light-icon {
+        filter: brightness(0.2);
+    }
+
+    .hero {
+        background-color: var(--background);
+    }
+
+    html {
+        scroll-behavior: smooth;
+        --text: #2a2a2a;
+        --accent: #8e402e;
+        --background: #fff;
+    }
+} */
